@@ -454,14 +454,6 @@ void AboutDialog::setupLabels()
     }
 }
 
-class AboutDialog::LibraryInfo {
-public:
-    QString name;
-    QString href;
-    QString url;
-    QString version;
-};
-
 void AboutDialog::showCredits()
 {
     auto creditsFileURL = QLatin1String(":/doc/CONTRIBUTORS");
