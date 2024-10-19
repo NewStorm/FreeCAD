@@ -564,8 +564,7 @@ void AboutDialog::showLibraryInformation()
     ui->tabWidget->addTab(tab_library, tr("Libraries"));
     auto hlayout = new QVBoxLayout(tab_library);
     auto textField = new QTextBrowser(tab_library);
-    textField->setOpenExternalLinks(false);
-    textField->setOpenLinks(false);
+    textField->setOpenExternalLinks(true);
     hlayout->addWidget(textField);
 
     QString baseurl = QString::fromLatin1("file:///%1/ThirdPartyLibraries.html")
@@ -573,8 +572,6 @@ void AboutDialog::showLibraryInformation()
     QUrl librariesFileUrl = QUrl(baseurl);
 
     textField->setSource(librariesFileUrl);
-
-    connect(textField, &QTextBrowser::anchorClicked, this, &AboutDialog::linkActivated);
 }
 
 void AboutDialog::showCollectionInformation()
